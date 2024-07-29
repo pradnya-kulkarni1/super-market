@@ -1,5 +1,6 @@
 package com.supermarket.model;
 
+
 public class UserLogin {
 	
 	private String email;

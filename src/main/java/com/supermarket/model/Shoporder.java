@@ -16,18 +16,19 @@ public class Shoporder {
 	private String status;
 	private String paymentMode;
 	private boolean paymentDone;
-	private boolean devilvered;
+	private boolean delivered;
+	
 	public Shoporder() {
 		super();
 	}
-	public Shoporder(int id, Cart cart, String status, String paymentMode, boolean paymentDone, boolean devilvered) {
+	public Shoporder(int id, Cart cart, String status, String paymentMode, boolean paymentDone, boolean devilvered, boolean delivered) {
 		super();
 		this.id = id;
 		this.cart = cart;
 		this.status = status;
 		this.paymentMode = paymentMode;
 		this.paymentDone = paymentDone;
-		this.devilvered = devilvered;
+		this.delivered = delivered;
 	}
 	public int getId() {
 		return id;
@@ -59,16 +60,16 @@ public class Shoporder {
 	public void setPaymentDone(boolean paymentDone) {
 		this.paymentDone = paymentDone;
 	}
-	public boolean isDevilvered() {
-		return devilvered;
+	public boolean isDelivered() {
+		return delivered;
 	}
 	public void setDevilvered(boolean devilvered) {
-		this.devilvered = devilvered;
+		this.delivered = delivered;
 	}
 	@Override
 	public String toString() {
 		return "Shoporder [id=" + id + ", cart=" + cart + ", status=" + status + ", paymentMode=" + paymentMode
-				+ ", paymentDone=" + paymentDone + ", devilvered=" + devilvered + "]";
+				+ ", paymentDone=" + paymentDone + ", devilvered=" + delivered + "]";
 	}
 	
 	

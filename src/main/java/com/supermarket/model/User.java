@@ -22,6 +22,8 @@ public class User {
 	private String zip;
 	
 	
+	
+	
 	public User() {
 		super();
 	}

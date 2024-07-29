@@ -15,38 +15,38 @@ import com.supermarket.model.UserLogin;
 @CrossOrigin
 
 @RestController
-@RequestMapping("api/users")
+@RequestMapping("/api/users")
 public class UserController {
-	
+
 	@Autowired
 	private UserRepo userRepo;
-	
+
 	@GetMapping("/")
-	public List<User> getAllUsers()
-	{
+	public List<User> getAllUsers() {
 		return userRepo.findAll();
 	}
-	
+
 	@GetMapping("/{id}")
 	public User getUserById(@PathVariable int id) {
 		Optional<User> u = userRepo.findById(id);
-		
-		if(u.isPresent()) {
+
+		if (u.isPresent()) {
 			return u.get();
 		}
-		
+
 		else {
-			System.err.println("User["+id+"] does not exist");
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND,"User not found: id ["+ id + "]");
-			
+			System.err.println("User[" + id + "] does not exist");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found: id [" + id + "]");
+
 		}
-		
+
 	}
-	
+
 	@PostMapping("")
-			public User addUser(@RequestBody User user) {
+	public User addUser(@RequestBody User user) {
 		return userRepo.save(user);
 	}
+
 	@PutMapping("/{id}")
 	public User updateUser(@PathVariable int id, @RequestBody User user) {
 		User u = null;
